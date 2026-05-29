@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { ArrowRight, Building2, ChevronLeft, Lock, Mail, Loader2 } from "lucide-react";
 import { getResponsaveis } from "@/mocks/handlers";
+import { assetPath } from "@/lib/base-path";
 import { useAppStore } from "@/store/app-store";
 import { AmbientOrbs } from "./AmbientOrbs";
 
@@ -131,7 +132,7 @@ export function LoginScreen() {
       <AmbientOrbs />
       <div className="LS-panel">
         <div className="LS-logo">
-          <img src="/advolve-logo.png" alt="advolve" className="LS-logo-img" />
+          <img src={assetPath("/advolve-logo.png")} alt="advolve" className="LS-logo-img" />
         </div>
 
         <h2 className="LS-heading">

@@ -27,7 +27,7 @@ export function useChat() {
 
       const key = pickMockKey(trimmed);
       try {
-        if (import.meta.env.VITE_USE_REAL_CHAT === "true") {
+        if (process.env.NEXT_PUBLIC_USE_REAL_CHAT === "true") {
           const r = await fetch("/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },

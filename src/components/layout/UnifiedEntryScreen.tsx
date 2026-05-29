@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ArrowRight, BarChart3, LogOut, Search } from "lucide-react";
 import { BU_OPTIONS, managedProjectsSeed } from "@/mocks/data";
+import { assetPath } from "@/lib/base-path";
 import { useAppStore } from "@/store/app-store";
 import { AmbientOrbs } from "./AmbientOrbs";
 import { UserAvatar } from "./UserAvatar";
@@ -83,7 +84,7 @@ export function UnifiedEntryScreen() {
         {/* Painel esquerdo — Playground */}
         <div className="UE-left">
           <div className="PS-logo">
-            <img className="PS-logo-img" src="/advolve-logo.png" alt="advolve" />
+            <img className="PS-logo-img" src={assetPath("/advolve-logo.png")} alt="advolve" />
             <p className="PS-logo-pg">Playground v0</p>
           </div>
           <h2 className="PS-heading">
@@ -135,7 +136,7 @@ export function UnifiedEntryScreen() {
         {/* Painel direito — Commercial Ops */}
         <div className="UE-right">
           <div className="PS-logo">
-            <img className="PS-logo-img" src="/advolve-logo.png" alt="advolve" />
+            <img className="PS-logo-img" src={assetPath("/advolve-logo.png")} alt="advolve" />
             <p className="PS-logo-pg UE-ops-pg">Commercial Ops</p>
           </div>
           <h2 className="PS-heading">

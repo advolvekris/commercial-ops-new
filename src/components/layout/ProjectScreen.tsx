@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Plus, Search } from "lucide-react";
 import { BU_OPTIONS } from "@/mocks/data";
+import { assetPath } from "@/lib/base-path";
 import { useAppStore } from "@/store/app-store";
 import { AmbientOrbs } from "./AmbientOrbs";
 import { NewClientModal } from "./NewClientModal";
@@ -70,7 +71,7 @@ export function ProjectScreen() {
 
       <div className="PS-panel">
         <div className="PS-logo">
-          <img className="PS-logo-img" src="/advolve-logo.png" alt="advolve" />
+          <img className="PS-logo-img" src={assetPath("/advolve-logo.png")} alt="advolve" />
           <p className="PS-logo-pg">Playground v0</p>
         </div>
         <h2 className="PS-heading">

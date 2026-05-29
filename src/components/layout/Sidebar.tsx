@@ -1,4 +1,5 @@
 import { useMemo, type ReactNode } from "react";
+import { assetPath } from "@/lib/base-path";
 import {
   Bot,
   CreditCard,
@@ -45,7 +46,7 @@ export function Sidebar() {
   return (
     <aside className="S">
       <div className="SL">
-        <img className="SL-logo" src="/advolve-logo.png" alt="advolve" />
+        <img className="SL-logo" src={assetPath("/advolve-logo.png")} alt="advolve" />
         <p className="SL-pg">Playground v0</p>
       </div>
 

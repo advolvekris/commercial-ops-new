@@ -1,4 +1,5 @@
 import { BarChart3, Bot, LogOut } from "lucide-react";
+import { assetPath } from "@/lib/base-path";
 import { useAppStore } from "@/store/app-store";
 import { AmbientOrbs } from "./AmbientOrbs";
 import { UserAvatar } from "./UserAvatar";
@@ -35,7 +36,7 @@ export function DomainSelectorScreen() {
 
       <div className="DS-panel">
         <div className="PS-logo">
-          <img className="PS-logo-img" src="/advolve-logo.png" alt="advolve" />
+          <img className="PS-logo-img" src={assetPath("/advolve-logo.png")} alt="advolve" />
         </div>
         <h2 className="PS-heading">
           Olá, {firstName}.

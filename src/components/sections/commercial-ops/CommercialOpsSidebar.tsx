@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { BarChart3, Briefcase, LayoutGrid, LogOut, UserPlus, Users } from "lucide-react";
 import type { CommercialOpsViewId } from "@/types";
+import { assetPath } from "@/lib/base-path";
 import { useAppStore } from "@/store/app-store";
 import { UserAvatar } from "@/components/layout/UserAvatar";
 
@@ -24,7 +25,7 @@ export function CommercialOpsSidebar() {
   return (
     <aside className="S OPS-sidebar">
       <div className="SL">
-        <img className="SL-logo" src="/advolve-logo.png" alt="advolve" />
+        <img className="SL-logo" src={assetPath("/advolve-logo.png")} alt="advolve" />
         <p className="SL-pg OPS-brand">Commercial Ops</p>
       </div>
 
