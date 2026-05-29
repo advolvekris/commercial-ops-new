@@ -3,7 +3,7 @@ import { ArrowRight, BarChart3, LogOut, Search } from "lucide-react";
 import { BU_OPTIONS, managedProjectsSeed } from "@/mocks/data";
 import { assetPath } from "@/lib/base-path";
 import { useAppStore } from "@/store/app-store";
-import { AmbientOrbs } from "./AmbientOrbs";
+import LiquidGlassBackground from "./LiquidGlassBackground";
 import { UserAvatar } from "./UserAvatar";
 
 const TOTAL_BUS = BU_OPTIONS.length;
@@ -60,7 +60,7 @@ export function UnifiedEntryScreen() {
 
   return (
     <div className="UE-screen" id="unified-entry">
-      <AmbientOrbs />
+      <LiquidGlassBackground className="LS-glass-bg" />
 
       {currentUser && (
         <div className="DS-user-badge">

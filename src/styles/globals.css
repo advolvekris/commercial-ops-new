@@ -56,6 +56,9 @@
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 [hidden]{display:none!important;}
+html,body{background:#04050b;color:var(--color-text-primary);min-height:100vh;}
+body{font-family:var(--font-body);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+#root{min-height:100vh;}
 
 /* ── Global dark scrollbar (webkit) ──────────── */
 *{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.10) transparent;}
@@ -3469,11 +3472,16 @@
 .DS-logout-btn:hover{background:rgba(248,113,113,0.12);color:#f87171;}
 
 /* ── Login Screen ──────────────────────────────── */
-.LS-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;}
+.LS-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden;background:#04050b;}
+
+/* WebGL "liquid glass" canvas — fundo da tela de login / entrada */
+.LS-glass-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none;display:block;}
+
 .LS-panel{position:relative;z-index:1;width:100%;max-width:420px;background:rgba(11,9,22,0.90);backdrop-filter:blur(56px) saturate(200%);-webkit-backdrop-filter:blur(56px) saturate(200%);border:var(--border-default);border-radius:var(--radius-xl);padding:32px 32px 28px;box-shadow:0 32px 80px rgba(0,0,0,0.65),inset 0 1px 0 rgba(255,255,255,0.05);}
 .LS-logo{margin-bottom:16px;}
 .LS-logo-img{height:24px;filter:brightness(1.05);}
 .LS-heading{font-family:var(--font-display);font-size:24px;font-weight:800;letter-spacing:-0.03em;color:var(--color-text-primary);line-height:1.2;margin:0 0 6px;}
+.LS-heading--welcome{white-space:nowrap;}
 .LS-heading em{font-style:normal;color:var(--color-accent-light);}
 .LS-sub{font-size:13px;color:var(--color-text-muted);margin:0;line-height:1.5;}
 .LS-divider{height:1px;background:var(--border-color-subtle);margin:16px 0 12px;}
@@ -3541,19 +3549,18 @@
   position:fixed;inset:0;z-index:500;
   display:flex;align-items:center;justify-content:center;
   padding:24px;
-  background:var(--color-bg-primary);
-  background-image:
-    radial-gradient(ellipse 700px 560px at 50% 48%,rgba(139,92,246,0.11) 0%,transparent 70%),
-    radial-gradient(ellipse 400px 320px at 50% 48%,rgba(91,33,182,0.09) 0%,transparent 60%);
+  background:#04050b;
+  overflow:hidden;
 }
 .UE-wrap{
+  position:relative;z-index:1;
   display:flex;align-items:stretch;
   max-width:920px;width:100%;max-height:calc(100vh - 48px);
-  background:rgba(11,11,18,0.80);
-  backdrop-filter:blur(60px) saturate(220%);
-  -webkit-backdrop-filter:blur(60px) saturate(220%);
+  background:rgba(11,9,22,0.90);
+  backdrop-filter:blur(56px) saturate(200%);
+  -webkit-backdrop-filter:blur(56px) saturate(200%);
   border:var(--border-default);border-radius:var(--radius-xl);
-  box-shadow:0 40px 100px rgba(0,0,0,0.65);
+  box-shadow:0 32px 80px rgba(0,0,0,0.65),inset 0 1px 0 rgba(255,255,255,0.05);
   overflow:hidden;
   opacity:0;animation:fu .55s .08s ease-out forwards;
 }
@@ -3567,7 +3574,7 @@
   flex:1;min-width:0;
   padding:44px 40px 32px;
   display:flex;flex-direction:column;
-  background:rgba(139,92,246,0.06);
+  background:rgba(139,92,246,0.10);
 }
 .UE-ops-pg{color:var(--color-accent-light)!important;}
 .UE-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start;flex:1;}

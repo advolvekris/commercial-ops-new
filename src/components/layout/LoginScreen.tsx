@@ -4,7 +4,7 @@ import { ArrowRight, Building2, ChevronLeft, Lock, Mail, Loader2 } from "lucide-
 import { getResponsaveis } from "@/mocks/handlers";
 import { assetPath } from "@/lib/base-path";
 import { useAppStore } from "@/store/app-store";
-import { AmbientOrbs } from "./AmbientOrbs";
+import LiquidGlassBackground from "./LiquidGlassBackground";
 
 type View = "main" | "google" | "sso";
 
@@ -68,7 +68,7 @@ export function LoginScreen() {
     const isGoogle = view === "google";
     return (
       <div className="LS-screen" id="login-screen">
-        <AmbientOrbs />
+        <LiquidGlassBackground className="LS-glass-bg" />
         <div className="LS-panel">
           <button type="button" className="LS-back-btn" onClick={goBack}>
             <ChevronLeft size={15} strokeWidth={2.5} />
@@ -129,15 +129,14 @@ export function LoginScreen() {
 
   return (
     <div className="LS-screen" id="login-screen">
-      <AmbientOrbs />
+      <LiquidGlassBackground className="LS-glass-bg" />
       <div className="LS-panel">
         <div className="LS-logo">
           <img src={assetPath("/advolve-logo.png")} alt="advolve" className="LS-logo-img" />
         </div>
 
-        <h2 className="LS-heading">
-          Bem-vindo<br />
-          de <em>volta</em>
+        <h2 className="LS-heading LS-heading--welcome">
+          Bem-<em>vindo</em>
         </h2>
         <p className="LS-sub">Acesse sua conta Advolve para continuar.</p>
 
